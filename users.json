@@ -1,0 +1,6 @@
+[
+    { "username": "admin", "parola": "fcsb123", "nume": "Gigi" },
+    { "username": "edi", "parola": "edistelistu", "nume": "edi" },
+    { "username": "razvan", "parola": "razvanstelistu", "nume": "razvan" },
+    { "username": "rares", "parola": "raresstelistu", "nume": "rares" }
+]

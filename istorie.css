@@ -1,0 +1,154 @@
+body {
+    background-image: url(imagini/fcsb-campioana.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed ;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    margin: 20px auto 10px auto;
+    padding: 25px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 4px solid #CC0000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    font-size: x-large;
+}
+
+.site-title {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffd700, #ff0000);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.title-underline {
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, #ffd700);
+    margin: 10px auto 20px auto;
+    border-radius: 2px;
+}
+
+.site-title {
+    animation: pulsare 4s infinite alternate;
+}
+
+@keyframes pulsare {
+    0% {
+        letter-spacing: 0px;
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        letter-spacing: 4px;
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+.title-underline::after {
+    content: "★";
+    color: gold;
+}
+
+
+.container-cadrane {
+    display: flex;
+    justify-content: space-between; 
+    gap: 25px; 
+    width: 90%;
+    margin: 40px auto;
+}
+.cadran-info {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding-top: 0;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border-top: 5px solid; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadran-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.cadran-info:nth-of-type(1) { border-color: #CC0000; }
+.cadran-info:nth-of-type(2) { border-color: #FFD700; }
+.cadran-info:nth-of-type(3) { border-color: #0000AA; }
+
+.cadran-info h3 {
+    font-size: 2.2rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.cadran-info p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #f0f0f0; 
+}
+
+.cadran-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFD700;
+    color: #FFD700;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cadran-link:hover {
+    background: #FFD700;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .container-cadrane {
+        flex-direction: column;
+    }
+}
+
+.buton-inapoi {
+    display: inline-block; 
+    padding: 10px 15px;
+    margin: 20px; 
+    background-color: #4c00fff0;
+    color: #ffffffbe;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid #ff0000;
+    transition: all 0.3s ease;
+}
+
+.buton-inapoi:hover {
+    background-color: #4c00ff80;
+    color: rgba(255, 255, 255, 0.638);
+    border-color: #c20505;
+    transform: scale(1.05);
+}
+
+.p_footer{
+    align-items: center;
+}

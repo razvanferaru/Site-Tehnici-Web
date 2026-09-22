@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script> 
+    <link rel="stylesheet" href="contact.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="imagini/FCSB_logo.ico">
+    <meta name="description" content="O pagina dedicata suporterilor ros-albastri de pretutindeni">
+    <title>Contact📞</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="site-title">Contact📞</h1>
+            <div class="title-underline"></div>
+            <nav class="main-nav">
+                </nav>
+        </header>
+    </div>
+
+    <main>
+        <section class="container-cadrane">
+            <article class="cadran-info">
+                <h3>Trimite-ne un mesaj</h3>
+                <form id="contact-form">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" id="email" placeholder="Email-ul tău" style="padding: 10px; width: 80%; border-radius: 5px; border: none;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <textarea id="mesaj" placeholder="Scrie mesajul tău aici..." rows="5" style="width: 80%; padding: 10px; border-radius: 5px; border: none;"></textarea>
+                    </div>
+
+                    <div style="margin-bottom: 15px; color: white;">
+                        <label for="rating">Ce notă dai site-ului?</label><br>
+                        <input type="range" id="rating" min="1" max="10" value="10" style="width: 60%;">
+                        <span id="rating-value" style="color: gold; font-weight: bold; font-size: 1.2rem;">10</span>
+                    </div>
+
+                    <div style="margin-bottom: 15px; color: white;">
+                        <input type="checkbox" id="termeni">
+                        <label for="termeni" style="font-size: 0.9rem;">Sunt de acord cu prelucrarea datelor (GDPR)</label>
+                    </div>
+
+                    <button type="submit" id="btn-trimite" style="padding: 10px 30px; border-radius: 5px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s;">Trimite</button>
+                </form>
+
+                <div id="mesaj-eroare" style="margin-top: 20px; font-size: 1.1rem; min-height: 30px;"></div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <a href="FCSB.html" class="buton-inapoi">← Înapoi la Acasă</a>
+        <p class="p_footer">&copy;Feraru Razvan-Mihai , Universitatea din Bucuresti , FMI</p>
+    </footer>
+</body>
+</html>

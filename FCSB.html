@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Mea</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
+        .container { width: 300px; text-align: center; }
+        input { padding: 10px; width: 70%; }
+        button { padding: 10px; cursor: pointer; background-color: green; color: white; border: none; }
+        ul { list-style-type: none; padding: 0; text-align: left; }
+        li { background: #f4f4f4; padding: 10px; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; }
+        .delete-btn { background: red; color: white; border: none; cursor: pointer; font-size: 12px;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Ce am de făcut azi?</h2>
+        <input type="text" id="taskInput" placeholder="Scrie o sarcină...">
+        <button onclick="adaugaSarcina()">Adaugă</button>
+        
+        <ul id="listaSarcini">
+            </ul>
+    </div>
+
+    <script>
+        // Funcția care rulează când apeși butonul
+        function adaugaSarcina() {
+            // 1. Luăm textul din input
+            let input = document.getElementById("taskInput");
+            let text = input.value;
+
+            // Dacă e gol, nu facem nimic (alertăm userul)
+            if (text === "") {
+                alert("Scrie ceva mai întâi!");
+                return;
+            }
+
+            // 2. Creăm elementul nou (li)
+            let elementNou = document.createElement("li");
+            
+            // Îi punem conținutul (textul + buton de ștergere)
+            elementNou.innerHTML = `
+                <span>${text}</span>
+                <button class="delete-btn" onclick="stergeSarcina(this)">X</button>
+            `;
+
+            // 3. Îl punem în lista mare (ul)
+            let lista = document.getElementById("listaSarcini");
+            lista.appendChild(elementNou);
+
+            // 4. Golim inputul ca să fie gata pentru următoarea sarcină
+            input.value = "";
+        }
+
+        // Funcția pentru ștergere
+        function stergeSarcina(butonApasat) {
+            // Butonul e în interiorul unui LI. Noi vrem să ștergem tot LI-ul.
+            // parentElement ne duce de la buton la părintele lui (li)
+            butonApasat.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

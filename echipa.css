@@ -1,0 +1,214 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+html {
+    height: 135%;
+}
+
+body {
+    background-image: url(imagini/fcsb-campioana.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed ;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.338);
+}
+
+header {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 25px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 4px solid #CC0000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    font-size: x-large;
+}
+
+.site-title {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffd700, #ff0000);
+    background-clip: text;
+    color: transparent;
+    padding: 10px 0;
+}
+
+.title-underline {
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, #ffd700);
+    margin: 10px auto 20px auto;
+    border-radius: 2px;
+}
+
+.site-title {
+    animation: pulsare 4s infinite alternate;
+}
+
+@keyframes pulsare {
+    0% {
+        letter-spacing: 0px;
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        letter-spacing: 4px;
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+.title-underline::after {
+    content: "★";
+    color: gold;
+}
+
+#subtitle{
+    display: inline-block;
+    margin:0 auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.497);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(248, 248, 248, 0.91);
+    padding: 5px 15px;
+}
+
+.pitch-layout {
+    position: relative; 
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-image: url('imagini/teren.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 100 / 70;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.player-dot {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    transform: translate(-50%, -50%);
+    background: #CC0000;
+    color: white;
+    border: 3px solid #FFD700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+}
+
+.player-number {
+    font-size: 1.8rem;
+}
+
+.player-name-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #FFD700;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.player-dot:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 10;
+    transition: transform 0.3s ease, z-index 0s 0s;
+}
+
+.player-dot:hover .player-name-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .player-dot {
+        width: 35px;
+        height: 35px;
+    }
+    .player-number {
+        font-size: 1.4rem;
+    }
+    .player-name-tooltip {
+        bottom: -25px;
+        font-size: 1.1rem;
+    }
+}
+
+.buton-inapoi {
+    display: inline-block; 
+    padding: 10px 15px;
+    margin: 20px; 
+    background-color: #4c00ff84;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid #ff0000;
+    transition: all 0.3s ease;
+}
+
+.buton-inapoi:hover {
+    background-color: #0d00ff2a;
+    color: rgba(3, 9, 89, 0.84);
+    border-color: #c20505;
+    transform: scale(1.05);
+}
+
+.p_footer{
+    align-items: center;
+}
+
+.reserves_padding{
+    background-color: #ff0000c3;
+    font-size: larger;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.reserves_team{
+    text-decoration: none;
+    color: #060606;
+}
