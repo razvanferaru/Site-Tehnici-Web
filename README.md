@@ -19,6 +19,6 @@ Un proiect web frontend dezvoltat pentru a pune în aplicare cunoștințele de H
 
 ## Instalare și Rulare
 Fiind un proiect pur frontend de tip Vanilla, nu necesită un proces complex de build. 
-1. Clonează repository-ul: `git clone https://github.com/razvanferaru/Nume-Repo-FCSB.git`
+1. Clonează repository-ul: `git clone https://github.com/razvanferaru/Site-Tehnici-Web.git`
 2. Deschide fișierele HTML într-un browser. 
 Notă: Deoarece aplicația folosește funcția `fetch()` pentru a citi fișierele JSON locale, este recomandată rularea printr-un Live Server (ex: extensia din VS Code) pentru a evita erorile de tip CORS generate de browser.

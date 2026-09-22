@@ -1,64 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Lista Mea</title>
-    <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
-        .container { width: 300px; text-align: center; }
-        input { padding: 10px; width: 70%; }
-        button { padding: 10px; cursor: pointer; background-color: green; color: white; border: none; }
-        ul { list-style-type: none; padding: 0; text-align: left; }
-        li { background: #f4f4f4; padding: 10px; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; }
-        .delete-btn { background: red; color: white; border: none; cursor: pointer; font-size: 12px;}
-    </style>
-</head>
-<body>
+<html lang="ro">
 
-    <div class="container">
-        <h2>Ce am de făcut azi?</h2>
-        <input type="text" id="taskInput" placeholder="Scrie o sarcină...">
-        <button onclick="adaugaSarcina()">Adaugă</button>
-        
-        <ul id="listaSarcini">
-            </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FCSB.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="imagini/FCSB_logo.ico">
+    <script src="script.js" defer></script>
+    <meta name="description" content="Pagina principala dedicata suporterilor ros-albastri">
+    <title>FCSB - Portal Suporteri</title>
+</head>
+
+<body>
+    <!-- Containerul pentru sistemul de Login Mock -->
+    <div id="login-container">
+        <span id="user-display"></span>
+        <button id="btn-login">Login</button>
+        <button id="btn-logout">Logout</button>
     </div>
 
-    <script>
-        // Funcția care rulează când apeși butonul
-        function adaugaSarcina() {
-            // 1. Luăm textul din input
-            let input = document.getElementById("taskInput");
-            let text = input.value;
-
-            // Dacă e gol, nu facem nimic (alertăm userul)
-            if (text === "") {
-                alert("Scrie ceva mai întâi!");
-                return;
-            }
-
-            // 2. Creăm elementul nou (li)
-            let elementNou = document.createElement("li");
+    <div class="container">
+        <header>
+            <h1 class="site-title">FCSB</h1>
+            <div class="title-underline"></div>
             
-            // Îi punem conținutul (textul + buton de ștergere)
-            elementNou.innerHTML = `
-                <span>${text}</span>
-                <button class="delete-btn" onclick="stergeSarcina(this)">X</button>
-            `;
+            <!-- Meniul de navigare principal -->
+            <nav class="main-nav">
+                <ul class="menu">
+                    <li><a href="FCSB.html">Acasă</a></li>
+                    <li><a href="echipa.html">Echipa</a></li>
+                    <li><a href="istorie.html">Istorie</a></li>
+                    <li><a href="contact.html">Contact📞</a></li>
+                </ul>
+            </nav>
+        </header>
 
-            // 3. Îl punem în lista mare (ul)
-            let lista = document.getElementById("listaSarcini");
-            lista.appendChild(elementNou);
+        <!-- Structura Grid pentru Știri și Informații -->
+        <main class="grid-layout">
+            
+            <!-- Cadranul pentru informatii si link-uri -->
+            <section class="info">
+                <h2 style="color: white; border-bottom: 2px solid #FFD700; padding-bottom: 10px;">Informații Suporteri</h2>
+                <ul class="info-list">
+                    <li><strong>Următorul Meci:</strong> FCSB vs. Universitatea Craiova (Duminică, 21:00)</li>
+                    <li><strong>Locație:</strong> Arena Națională</li>
+                    <li><strong>Abonamente 2026:</strong> Disponibile la peluză și tribuna a II-a</li>
+                </ul>
+                
+                <div class="link-uri-rapide">
+                    <a href="https://www.fcsb.ro" target="_blank">Site-ul Oficial</a>
+                    <a href="https://www.bilete-fcsb.ro" target="_blank">Cumpără Bilete</a>
+                </div>
 
-            // 4. Golim inputul ca să fie gata pentru următoarea sarcină
-            input.value = "";
-        }
+                <!-- Ceasul Digital generat din JavaScript -->
+                <div style="margin-top: 25px; color: #FFD700; font-size: 1.2rem; font-weight: bold;">
+                    Ora actuală: <span id="ceas-digital"></span>
+                </div>
+            </section>
 
-        // Funcția pentru ștergere
-        function stergeSarcina(butonApasat) {
-            // Butonul e în interiorul unui LI. Noi vrem să ștergem tot LI-ul.
-            // parentElement ne duce de la buton la părintele lui (li)
-            butonApasat.parentElement.remove();
-        }
-    </script>
+            <!-- Cadranul interactiv pentru stiri cu Fetch API -->
+            <section class="stiri">
+                <h2 style="color: white; border-bottom: 2px solid #CC0000; padding-bottom: 10px;">Ultimele Știri 📰</h2>
+                
+                <button id="incarca-stiri" style="margin-bottom: 15px; padding: 8px 15px; background: #FFD700; border: none; font-weight: bold; border-radius: 5px; cursor: pointer;">
+                    Încarcă Știrile Noi
+                </button>
+
+                <ul id="lista-stiri" style="list-style: none; padding: 0; text-align: left;">
+                    <!-- Știrile vor fi generate aici din stiri.json prin script.js -->
+                </ul>
+            </section>
+
+        </main>
+
+        <footer style="margin-top: 40px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; color: white;">
+            <p class="p_footer">&copy; Feraru Răzvan-Mihai , Universitatea din București , FMI</p>
+        </footer>
+    </div>
 </body>
+
 </html>
